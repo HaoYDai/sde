@@ -1,7 +1,7 @@
 
-IMAGE_NAME ?= env_linux
+IMAGE_NAME ?= ubun22
 TAG ?= 0.1.0
-CONTAINER_NAME ?= env_linux
+CONTAINER_NAME ?= ubun22
 VOLUME ?= /home:/home
 
 .PHONY: build run stop rm clean log shell
