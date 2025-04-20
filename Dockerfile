@@ -4,6 +4,10 @@ FROM ubuntu:18.04
 # Author
 LABEL maintainer="darren <Darren_Serious@hotmail.com>"
 
+ENV TZ=Asia/Shanghai
+
+RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && \
+    echo $TZ > /etc/timezone
  
 # expect
 RUN apt-get update --fix-missing && apt-get install -y \
