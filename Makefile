@@ -2,7 +2,7 @@
 IMAGE_NAME ?= ubun22
 TAG ?= 0.1.0
 CONTAINER_NAME ?= ubun22
-VOLUME ?= /home:/home
+WORKDIR ?= $(PWD)/..
 
 .PHONY: build run stop rm clean log shell
 
@@ -11,11 +11,17 @@ build:
 
 run: stop rm build
 	docker run -it \
+		-w $(WORKDIR) \
+		-u $(shell id -u):$(shell id -g) \
 		--privileged \
 		--network host \
 		--name $(CONTAINER_NAME) \
-		-v $(VOLUME) \
-		$(IMAGE_NAME):$(TAG)
+		-v /home:/home \
+		-v /etc/passwd:/etc/passwd:ro \
+    	-v /etc/group:/etc/group:ro \
+		-v /etc/shadow:/etc/shadow:ro \
+		-v /etc/sudoers:/etc/sudoers:ro \
+		$(IMAGE_NAME):$(TAG) /bin/bash
 
 stop:
 	docker stop $(CONTAINER_NAME) || true
