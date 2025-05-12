@@ -1,6 +1,6 @@
 
 IMAGE_NAME ?= ubun22
-TAG ?= 0.1.0
+TAG ?= 1.0.0
 CONTAINER_NAME ?= ubun22
 WORKDIR ?= $(PWD)/..
 
@@ -25,6 +25,10 @@ run: stop rm build
 
 stop:
 	docker stop $(CONTAINER_NAME) || true
+
+push: build
+	docker tag $(IMAGE_NAME):$(TAG) g-rdhp3682-docker.pkg.coding.net/builds/docker/$(IMAGE_NAME):$(TAG)
+	docker push g-rdhp3682-docker.pkg.coding.net/builds/docker/$(IMAGE_NAME):$(TAG)
 
 rm:
 	docker rm $(CONTAINER_NAME) || true
