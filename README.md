@@ -6,7 +6,8 @@
 
  - cmake 3.31.7
  - grpc 1.71.1
- - gcc-l
+ - aarch64-linux-gnu-gcc 11.4.0
+ - aarch64-linux-gnu-g++ 11.4.0
 
 ### Embedded Linux
 

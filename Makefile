@@ -1,6 +1,6 @@
 
 IMAGE_NAME ?= ubun22
-TAG ?= 1.0.0
+TAG ?= 1.0.1
 CONTAINER_NAME ?= ubun22
 WORKDIR ?= $(PWD)/..
 

@@ -18,9 +18,10 @@ RUN apt-get update --fix-missing && apt-get install -y \
       libxml2-dev \
       pkg-config repo ssh make gcc libssl-dev liblz4-tool \
        g++ patchelf chrpath gawk texinfo chrpath diffstat binfmt-support \
-      qemu-user-static live-build bison flex fakeroot gcc-multilib g++-multilib \
+      qemu-user-static live-build bison flex fakeroot \
       unzip device-tree-compiler ncurses-dev p7zip bc tree \
       whiptail sudo time expect rsync xxd python2 file bsdmainutils \
+      gcc-aarch64-linux-gnu g++-aarch64-linux-gnu \
       && ln -s /usr/bin/python3 /usr/bin/python \
       && wget -P /opt/ https://cmake.org/files/v3.31/cmake-3.31.7-linux-x86_64.tar.gz \
       && tar -zxvf /opt/cmake-3.31.7-linux-x86_64.tar.gz -C /opt/ \
