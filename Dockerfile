@@ -21,15 +21,13 @@ RUN apt-get update --fix-missing && apt-get install -y \
       qemu-user-static live-build bison flex fakeroot \
       unzip device-tree-compiler ncurses-dev p7zip bc tree \
       whiptail sudo time expect rsync xxd python2 file bsdmainutils \
-      gcc-aarch64-linux-gnu g++-aarch64-linux-gnu \
+      gcc-aarch64-linux-gnu g++-aarch64-linux-gnu python3-pip \
       && ln -s /usr/bin/python3 /usr/bin/python \
+      && pip install conan \
       && wget -P /opt/ https://cmake.org/files/v3.31/cmake-3.31.7-linux-x86_64.tar.gz \
       && tar -zxvf /opt/cmake-3.31.7-linux-x86_64.tar.gz -C /opt/ \
       && ln -s /opt/cmake-3.31.7-linux-x86_64/bin/* /usr/bin/ \
       && rm -rf /opt/cmake-3.31.7-linux-x86_64.tar.gz \
-      && wget -P /usr/ https://github.com/HaoYDai/builds/releases/download/grpc_v1.71.1_ubuntu22_x86_64/grpc_v1.71.1_ubuntu22_x86_64.tar.gz \
-      && tar -zxvf /usr/grpc_v1.71.1_ubuntu22_x86_64.tar.gz -C /usr/ \
-      && rm -rf /usr/grpc_v1.71.1_ubuntu22_x86_64.tar.gz \
       && apt-get clean \
       && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
  

@@ -5,9 +5,9 @@
 ### Linux Application
 
  - cmake 3.31.7
- - grpc 1.71.1
  - aarch64-linux-gnu-gcc 11.4.0
  - aarch64-linux-gnu-g++ 11.4.0
+ - conan 2.16.1
 
 ### Embedded Linux
 
