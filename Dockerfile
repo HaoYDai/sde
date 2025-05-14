@@ -11,23 +11,16 @@ RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && \
 
 # expect
 RUN apt-get update --fix-missing && apt-get install -y \
-      build-essential \
-      git \
-      libcurl4-openssl-dev \
-      libgtest-dev \
-      libxml2-dev \
-      pkg-config repo ssh make gcc libssl-dev liblz4-tool \
-       g++ patchelf chrpath gawk texinfo chrpath diffstat binfmt-support \
+      build-essential git libcurl4-openssl-dev cmake \
+      libgtest-dev libxml2-dev cmake pkg-config repo ssh \
+      make gcc libssl-dev liblz4-tool g++ patchelf chrpath \
+      gawk texinfo chrpath diffstat binfmt-support \
       qemu-user-static live-build bison flex fakeroot \
       unzip device-tree-compiler ncurses-dev p7zip bc tree \
       whiptail sudo time expect rsync xxd python2 file bsdmainutils \
       gcc-aarch64-linux-gnu g++-aarch64-linux-gnu python3-pip \
       && ln -s /usr/bin/python3 /usr/bin/python \
       && pip install conan \
-      && wget -P /opt/ https://cmake.org/files/v3.31/cmake-3.31.7-linux-x86_64.tar.gz \
-      && tar -zxvf /opt/cmake-3.31.7-linux-x86_64.tar.gz -C /opt/ \
-      && ln -s /opt/cmake-3.31.7-linux-x86_64/bin/* /usr/bin/ \
-      && rm -rf /opt/cmake-3.31.7-linux-x86_64.tar.gz \
       && apt-get clean \
       && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
  
