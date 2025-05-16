@@ -1,0 +1,9 @@
+[[resources]]
+name = "cmake"
+url = "https://cmake.org/files/v3.31/cmake-3.31.7-linux-x86_64.tar.gz"
+type = "tar.gz"
+
+[[resources]]
+name = "aarch64-none-linux-gnu"
+url = "https://developer.arm.com/-/media/Files/downloads/gnu/14.2.rel1/binrel/arm-gnu-toolchain-14.2.rel1-x86_64-aarch64-none-linux-gnu.tar.xz"
+type = "tar.xz"
